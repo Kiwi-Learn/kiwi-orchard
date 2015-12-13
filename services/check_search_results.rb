@@ -36,7 +36,7 @@ class CheckSearchFromAPI
     if results.code != 200
       return nil
     end
-    
+
     courses_array = []
     results.each do |result|
       search_results = SearchResult.new
@@ -44,7 +44,7 @@ class CheckSearchFromAPI
       search_results.name = result['name']
       search_results.url = result['url']
       search_results.date = result['date']
-      search_results.date = result['fees']
+      search_results.fees = result['fees']
       search_results.code = results.code
       courses_array.push(search_results.clone)
     end
