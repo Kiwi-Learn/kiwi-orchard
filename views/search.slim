@@ -1,0 +1,12 @@
+.container
+  / form.navbar-form action='/search' method='post' id='search-form'
+  /   input.form-control type='text' name='keyword' id='home-form-keyword' placeholder='Course name here...'
+  /   input.form-control type='submit' value='submit' id='check-submit' class='submit'
+  / p
+  h2 Search a course with keyword
+  form action='/search' method='post' id='search-form'
+    .row
+      .input-group.input-group-lg
+        input.form-control type='text' name='keyword' id='home-form-keyword' placeholder=("Course name keyword here...") /
+        span.input-group-btn
+          button.btn.btn-default type="submit" value='submit' id='check-submit' Search
