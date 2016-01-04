@@ -79,6 +79,7 @@ class ApplicationController < Sinatra::Base
   app_get_statistics = lambda do
     request_url = "#{settings.api_server}/#{settings.api_ver}/courselist"
     results = GetCoursesDateStatisticsAPI.new(request_url).call
+    @chart_data_2016 = results.twenty_sixteen
     @chart_data_2015 = results.twenty_fifteen
     @chart_data_2014 = results.twenty_fourteen
     @chart_data_2013 = results.twenty_thirteen
