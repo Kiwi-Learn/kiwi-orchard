@@ -12,15 +12,31 @@
           button.btn.btn-default type="submit" value='submit' id='check-submit' Search
   br/
   br/
-  h2 Kiwi Courses Trend
-  -if @popularwordlist
+  h2 
+    | Kiwi Courses Trend Chart&nbsp;
+    i.fa.fa-bar-chart
+    == bar_chart @keyword_chartdata, discrete: true, height: '200px', width: '100px'
+  br/
+  h2 
+    | Kiwi Courses Trend&nbsp;
+    i.fa.fa-line-chart
+  -if @keyword_tabledata
     table.table
       tbody
-        tr
-          th keyword
-          th count
-        -@popularwordlist.each do |word|
+      tr
+        th
+          i.fa.fa-chevron-circle-up 
+          | &nbsp;TOP
+        th 
+          i.fa.fa-search
+          | &nbsp;Most Searched
+        th 
+          i.fa.fa-eye
+          | &nbsp;View
+        -@keyword_tabledata.each do |word|
           tr
+            td 
+              = "No. #{word['rank']}"
             td
               = word['keyword']
             td
