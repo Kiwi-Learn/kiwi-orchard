@@ -55,8 +55,12 @@ class ApplicationController < Sinatra::Base
 
   app_get_search = lambda do
     date = Date.today.prev_day.to_s.split('-').rotate.join('-')
-    response = HTTParty.get("#{settings.api_server}/#{settings.api_ver}/popularity/#{date}")
-    @popularwordlist = JSON.parse(response.body)['results']
+    request_url = "#{settings.api_server}/#{settings.api_ver}/popularity/#{date}"
+    keyword_stat = KeywordStatisticsAPI.new(request_url).call
+    @keyword_chartdata = keyword_stat.chart_data
+    @keyword_tabledata = keyword_stat.table_data
+    logger.info @keyword_chartdata
+    logger.info @keyword_tabledata
     slim :search
   end
 
