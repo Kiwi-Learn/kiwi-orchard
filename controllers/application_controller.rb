@@ -54,7 +54,7 @@ class ApplicationController < Sinatra::Base
   end
 
   app_get_search = lambda do
-    date = Date.today.prev_day.to_s.split('-').rotate.join('-')
+    date = Time.now.utc.to_s.split(" ")[0].split("-").rotate.join("-")
     request_url = "#{settings.api_server}/#{settings.api_ver}/popularity/#{date}"
     keyword_stat = KeywordStatisticsAPI.new(request_url).call
     @keyword_chartdata = keyword_stat.chart_data
