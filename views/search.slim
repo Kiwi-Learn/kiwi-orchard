@@ -10,3 +10,18 @@
         input.form-control type='text' name='keyword' id='home-form-keyword' placeholder=("Course name keyword here...") /
         span.input-group-btn
           button.btn.btn-default type="submit" value='submit' id='check-submit' Search
+  br/
+  br/
+  h2 Kiwi Courses Trend
+  -if @popularwordlist
+    table.table
+      tbody
+        tr
+          th keyword
+          th count
+        -@popularwordlist.each do |word|
+          tr
+            td
+              = word['keyword']
+            td
+              = word['count']
