@@ -24,6 +24,11 @@
           td
             a href="#{@single_course['url']}" 
               i.fa.fa-external-link
+    
+    h3 Video View Track
+    -if !@video_chartdata.empty?
+      == line_chart @video_chartdata, discrete: true, ytitle: "View"
+    
     #disqus_thread
     javascript:
       /**
