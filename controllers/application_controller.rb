@@ -89,6 +89,11 @@ class ApplicationController < Sinatra::Base
     @chart_data_2014 = results.twenty_fourteen
     @chart_data_2013 = results.twenty_thirteen
     @chart_data_2012 = results.twenty_twelve
+
+    institution_result = InstitutionsStatisticsResultAPI.new(request_url).call
+    @institution_top10data = institution_result.top10_data
+    logger.info @institution_top10data
+
     slim :statistics
   end
 
