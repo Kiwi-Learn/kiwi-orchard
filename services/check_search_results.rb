@@ -12,6 +12,7 @@ class SearchResult
   attribute :url
   attribute :date
   attribute :fees
+  attribute :institution
 
   def to_json
     to_hash.to_json
@@ -45,6 +46,7 @@ class CheckSearchFromAPI
       search_results.url = result['url']
       search_results.date = result['date']
       search_results.fees = result['fees']
+      search_results.institution = result['institution']
       search_results.code = results.code
       courses_array.push(search_results.clone)
     end

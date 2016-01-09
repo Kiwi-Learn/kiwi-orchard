@@ -7,18 +7,23 @@
           th Course ID
           th Course Name
           th Date
+          th Course Institution
+          th Course Fees
           th Course Page
         tr
           td#course_id
             a href="/courses/#{@single_course['id']}" #{@single_course['id'] }
-          td width='300'
+          td width='400'
             = @single_course['name']
           td width='200'
             = @single_course['date']
+          td 
+            = @single_course['institution']
+          td 
+            = @single_course['fees']
           td
             a href="#{@single_course['url']}" 
               i.fa.fa-external-link
-
     #disqus_thread
     javascript:
       /**
