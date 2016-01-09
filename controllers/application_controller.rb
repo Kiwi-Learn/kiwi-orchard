@@ -9,7 +9,7 @@ require 'httparty'
 require 'chartkick'
 
 class ApplicationController < Sinatra::Base
-  helpers CourseHelpers, SearchHelpers, ApplicationHelpers
+  helpers CourseHelpers, SearchHelpers, ApplicationHelpers, DateHelpers
   enable :sessions
   register Sinatra::Flash
   use Rack::MethodOverride
@@ -42,7 +42,7 @@ class ApplicationController < Sinatra::Base
 
   app_get_courses = lambda do
     response = HTTParty.get("#{settings.api_server}/#{settings.api_ver}/courselist")
-    logger.info "#{settings.api_server}/#{settings.api_ver}/courselist"
+    # logger.info "#{settings.api_server}/#{settings.api_ver}/courselist"
     @courselist = JSON.parse(response.body)
     slim :courses
   end
@@ -54,13 +54,11 @@ class ApplicationController < Sinatra::Base
   end
 
   app_get_search = lambda do
-    date = Time.now.utc.to_s.split(" ")[0].split("-").rotate.join("-")
+    date = formatter(Time.yesterday)
     request_url = "#{settings.api_server}/#{settings.api_ver}/popularity/#{date}"
     keyword_stat = KeywordStatisticsAPI.new(request_url).call
     @keyword_chartdata = keyword_stat.chart_data
     @keyword_tabledata = keyword_stat.table_data
-    logger.info @keyword_chartdata
-    logger.info @keyword_tabledata
     slim :search
   end
 
