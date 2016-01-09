@@ -50,6 +50,12 @@ class ApplicationController < Sinatra::Base
   app_get_courses_info = lambda do
     response = HTTParty.get("#{settings.api_server}/#{settings.api_ver}/info/#{params[:id]}.json")
     @single_course = JSON.parse(response.body)
+
+    request_url = "#{settings.api_server}/#{settings.api_ver}/couseserial/#{params[:id]}"
+    video_stat = VedioStatisticsAPI.new(request_url).call
+    @video_chartdata = video_stat.chart_data
+
+    logger.info @video_chartdata
     slim :course_info
   end
 
