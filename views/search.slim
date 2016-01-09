@@ -13,12 +13,13 @@
   br/
   br/
   h2 
-    | Kiwi Courses Trend Chart&nbsp;
+    | Yesterday Trend Chart&nbsp;
     i.fa.fa-bar-chart
-    == bar_chart @keyword_chartdata, discrete: true, height: '200px', width: '100px'
+    -if !@keyword_chartdata.empty?
+      == bar_chart @keyword_chartdata, discrete: true, height: '200px', width: '100px'
   br/
   h2 
-    | Kiwi Courses Trend&nbsp;
+    | Yesterday Trend&nbsp;
     i.fa.fa-line-chart
   -if @keyword_tabledata
     table.table
