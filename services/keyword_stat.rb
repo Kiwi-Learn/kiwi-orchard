@@ -24,6 +24,13 @@ class KeywordStatisticsAPI
   def call
     keyword_stat = KeywordStatisticsResult.new
     response = HTTParty.get(@api_url)
+
+    if response.code === 204
+      keyword_stat.chart_data = []
+      keyword_stat.table_data = []
+      return keyword_stat
+    end
+
     keyword_list = JSON.parse(response.body)['results']
     keyword_stat.table_data = keyword_list
 
