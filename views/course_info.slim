@@ -1,5 +1,5 @@
 .container
-
+  h3.text-center Course Information
   -if @single_course
     table.table
       tbody
@@ -25,7 +25,7 @@
             a href="#{@single_course['url']}" 
               i.fa.fa-external-link
     
-    h3 Video View Track
+    h3.text-center Video View Track
     -if !@video_chartdata.empty?
       == line_chart @video_chartdata, discrete: true, ytitle: "View"
     
