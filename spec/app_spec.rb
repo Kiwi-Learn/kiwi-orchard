@@ -72,7 +72,7 @@ describe 'Kiwi orchard Stories' do
         # WHEN
         # THEN
         page.browser.url.must_match %r{http.*/statistics}
-        page.statistics_header.must_equal 'Courses History Statistics'
+        page.statistics_header.must_equal 'Statistics'
         page.chart_2015_element.exists?.must_equal true
         page.chart_2014_element.exists?.must_equal true
         page.chart_2013_element.exists?.must_equal true

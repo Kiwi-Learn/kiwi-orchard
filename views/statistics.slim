@@ -1,17 +1,38 @@
 .container
   .page-header
-    h1 Courses History Statistics
-    h2 Courses Open in 2016
-    == column_chart @chart_data_2016, library:{chartArea:{width:'100%'}, stacked: true}, id: 'courses-2016', height: '300px', width: '100px'
-    h2 Courses Open in 2015
-    == column_chart @chart_data_2015, library:{chartArea:{width:'100%'}, stacked: true}, id: 'courses-2015', height: '300px', width: '100px'
-    h2 Courses Open in 2014
-    == column_chart @chart_data_2014, library:{chartArea:{width:'100%'}}, id: 'courses-2014', height: '300px', width: '100px'
-    h2 Courses Open in 2013
-    == column_chart @chart_data_2013, library:{chartArea:{width:'100%'}}, id: 'courses-2013', height: '300px', width: '100px'
-    h2 Courses Open in 2012
-    == column_chart @chart_data_2012, library:{chartArea:{width:'100%'}}, id: 'courses-2012', height: '300px', width: '100px'
+    h1 Statistics
+    ul.nav.nav-tabs.nav-justified
+      li.active
+        a data-toggle="tab" href="#institution"  Institution Contribution
+      li
+        a data-toggle="tab" href="#2016"  Course Open in 2016
+      li
+        a data-toggle="tab" href="#2015"  Course Open in 2015
+      li
+        a data-toggle="tab" href="#2014"  Course Open in 2014
+      li
+        a data-toggle="tab" href="#2013"  Course Open in 2013
+      li
+        a data-toggle="tab" href="#2012"  Course Open in 2012
+    .tab-content
+      #institution.tab-pane.active
+        h3.text-center Institution Contribution Top 10
+        == pie_chart @institution_top10data, height: '400px', width: '400px'
+      #2016.tab-pane.center-block
+        h3.text-center Courses Open in 2016
+        == column_chart @chart_data_2016, id: 'courses-2016', height: '400px', width: '400px'
+      #2015.tab-pane.center-block
+        h3.text-center Courses Open in 2015
+        == column_chart @chart_data_2015, id: 'courses-2015', height: '400px', width: '400px'
+      #2014.tab-pane.center-block
+        h3.text-center Courses Open in 2014
+        == column_chart @chart_data_2014, id: 'courses-2014', height: '400px', width: '400px'
+      #2013.tab-pane.center-block
+        h3.text-center Courses Open in 2013
+        == column_chart @chart_data_2013, id: 'courses-2013', height: '400px', width: '400px'
+      #2012.tab-pane.center-block
+        h3.text-center Courses Open in 2012
+        == column_chart @chart_data_2012, id: 'courses-2012', height: '400px', width: '400px'
+    
 
     / TODO Dropdown button is more better
-    h2 Institution Top 10
-    == pie_chart @institution_top10data , height: '500px', width: '100px'
