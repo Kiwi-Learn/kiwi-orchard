@@ -22,9 +22,18 @@ body {
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
+body {
+  font-family: 'PT Sans', sans-serif;
+  line-height: 25px;
+}
+
+.feature-desc {
+  font-family: 'Indie Flower', cursive;
+}
 
 body > .container {
   padding: 60px 15px 0;
+
 }
 .container .text-muted {
   margin: 20px 0;
