@@ -39,7 +39,7 @@ describe 'Kiwi orchard Stories' do
 
       visit SearchPage do |page|
         page.browser.url.must_match %r{http.*/search}
-        page.search_header.must_equal 'Search a course with keyword'
+        page.search_header.must_equal 'Explore courses'
 
         # GIVEN & WEHN
         page.search_course('program')
