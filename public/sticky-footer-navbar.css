@@ -7,6 +7,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  padding-top: 50px;
 }
 .footer {
   position: absolute;
@@ -36,4 +37,26 @@ body > .container {
 
 code {
   font-size: 80%;
+}
+
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.business-header {
+    height: 400px;
+    background: url('https://images.unsplash.com/photo-1443146517630-ac1e04dfed9a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=72f0e5e57b0b60ca806884f856587bf0') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+}
+
+.img-center {
+    margin: 0 auto;
 }
