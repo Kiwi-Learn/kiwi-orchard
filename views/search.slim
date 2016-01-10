@@ -9,10 +9,12 @@
       .input-group.input-group-lg
         input.form-control type='text' name='keyword' id='home-form-keyword' placeholder=("Course name keyword here...") /
         span.input-group-btn
-          button.btn.btn-default type="submit" value='submit' id='check-submit' Search
+          button.btn.btn-default type="submit" value='submit' id='check-submit'
+            | Search &nbsp;
+            i.fa.fa-search
   hr/
   ul.nav.nav-tabs.nav-justified
-    li
+    li.active
       a data-toggle="tab" href="#trend-pie" 
         | Trend Bar &nbsp;
         i.fa.fa-bar-chart
@@ -24,9 +26,9 @@
     #trend-pie.tab-pane.active
       -if !@keyword_chartdata.empty?
         == bar_chart @keyword_chartdata, discrete: true, height: '400px', width: '100px'
-    #trend-table.tab-pane.center-block 
+    #trend-table.tab-pane.center-block
       -if @keyword_tabledata
-        table.table
+        table.table.table-striped
           tbody
           tr
             th
