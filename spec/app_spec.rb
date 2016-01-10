@@ -25,10 +25,10 @@ describe 'Kiwi orchard Stories' do
     it 'check home page' do
       visit HomePage do |page|
         page.click_home_link
-        page.homepage_header.must_equal 'Hello, welcome to Kiwi Orchard!!'
+        page.homepage_header.must_equal 'Kiwi Learn'
 
         page.click_kiwi_learn_link
-        page.homepage_header.must_equal 'Hello, welcome to Kiwi Orchard!!'
+        page.homepage_header.must_equal 'Kiwi Learn'
       end
     end
 
