@@ -1,4 +1,4 @@
-header.business-header
+header.business-header#header
   .container
     .row
       .col-lg-12
@@ -34,3 +34,25 @@ header.business-header
       h2.text-center Interactivity
       h5 Follow courses and people to see their recommended discussions here.
   hr/
+
+  / javascript:
+  /   var imglist=[
+  /     'https://images.unsplash.com/photo-1421494756418-72f0f89c6bfd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=11ce69bdad3f07570c14c620a31cc3a4', //red fruit
+  /     'https://images.unsplash.com/uploads/141247613151541c06062/c15fb37d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7d3999011ce6b2cd9fbdd90f1151b80f', //sunshine farm
+  /     'https://images.unsplash.com/photo-1445445096960-c6fd1a3b901e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=351d8d6c4378ef5412af258fbf7c423b' //pumpkin
+  /   ];
+  /     
+  /   var count = 0;
+  /   var a = setInterval(function() {
+  /     changeImg();
+  /   }, 5000);
+  / 
+  /   function changeImg(){
+  /     var nextImg = _.sample(imglist);
+  /     $('.business-header').fadeTo('def', 0.5, function() {
+  /       $(this).css('background', `url(${nextImg}) 50% 50% / cover no-repeat scroll`);
+  /       }).fadeTo('def', 1);
+  /     
+  /     //document.styleSheets[1].rules[7].style.background = `url("${nextImg}") 50% 50% / cover no-repeat scroll`;
+  /   }
+    
