@@ -10,35 +10,39 @@
         input.form-control type='text' name='keyword' id='home-form-keyword' placeholder=("Course name keyword here...") /
         span.input-group-btn
           button.btn.btn-default type="submit" value='submit' id='check-submit' Search
-  br/
-  br/
-  h2 
-    | Yesterday Trend Chart&nbsp;
-    i.fa.fa-bar-chart
-    -if !@keyword_chartdata.empty?
-      == bar_chart @keyword_chartdata, discrete: true, height: '200px', width: '100px'
-  br/
-  h2 
-    | Yesterday Trend&nbsp;
-    i.fa.fa-line-chart
-  -if @keyword_tabledata
-    table.table
-      tbody
-      tr
-        th
-          i.fa.fa-chevron-circle-up 
-          | &nbsp;TOP
-        th 
-          i.fa.fa-search
-          | &nbsp;Most Searched
-        th 
-          i.fa.fa-eye
-          | &nbsp;View
-        -@keyword_tabledata.each do |word|
+  hr/
+  ul.nav.nav-tabs.nav-justified
+    li
+      a data-toggle="tab" href="#trend-pie" 
+        | Trend Bar &nbsp;
+        i.fa.fa-bar-chart
+    li
+      a data-toggle="tab" href="#trend-table" 
+        | Trend Rank &nbsp;
+        i.fa.fa-line-chart
+  .tab-content
+    #trend-pie.tab-pane.active
+      -if !@keyword_chartdata.empty?
+        == bar_chart @keyword_chartdata, discrete: true, height: '400px', width: '100px'
+    #trend-table.tab-pane.center-block 
+      -if @keyword_tabledata
+        table.table
+          tbody
           tr
-            td 
-              = "No. #{word['rank']}"
-            td
-              = word['keyword']
-            td
-              = word['count']
+            th
+              i.fa.fa-chevron-circle-up 
+              | &nbsp;TOP
+            th 
+              i.fa.fa-search
+              | &nbsp;Most Searched
+            th 
+              i.fa.fa-eye
+              | &nbsp;View
+            -@keyword_tabledata.each do |word|
+              tr
+                td 
+                  = "No. #{word['rank']}"
+                td
+                  = word['keyword']
+                td
+                  = word['count']
