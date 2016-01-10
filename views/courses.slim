@@ -28,3 +28,18 @@
             td
               a href="#{course['url']}"
                 i.fa.fa-external-link
+
+p.text-right
+  i.fa.fa-music
+  i.fa.fa-arrow-up.elevator-button.fa-4x
+
+javascript:
+  window.onload = function() {
+    var elevator = new Elevator({
+      element: document.querySelector('.elevator-button'),
+      targetElement: document.querySelector('#elevator-target'),
+      mainAudio: '/music/elevator.mp3',
+      endAudio: '/music/ding.mp3',
+      duration: 15000
+    });
+  }
