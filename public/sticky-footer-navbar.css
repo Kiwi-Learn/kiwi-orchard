@@ -43,7 +43,7 @@ code {
 
 .business-header {
     height: 400px;
-    background: url('https://images.unsplash.com/uploads/141247613151541c06062/c15fb37d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7d3999011ce6b2cd9fbdd90f1151b80f') center center no-repeat scroll;
+    background: url('https://images.unsplash.com/photo-1421494756418-72f0f89c6bfd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=11ce69bdad3f07570c14c620a31cc3a4') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -53,8 +53,9 @@ code {
 /* Customize the text color and shadow color and to optimize text legibility. */
 
 .tagline {
-    text-shadow: 0 0 10px #000;
-    color: #fff;
+    text-shadow: 0px 0px 50px black, 1px 1px  50px black, 1px -1px  50px black, 1px -1px  50px black;
+    color: #FFF;
+
 }
 
 .img-center {
