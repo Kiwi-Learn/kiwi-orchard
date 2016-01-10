@@ -26,9 +26,9 @@
     #trend-pie.tab-pane.active
       -if !@keyword_chartdata.empty?
         == bar_chart @keyword_chartdata, discrete: true, height: '400px', width: '100px'
-    #trend-table.tab-pane.center-block 
+    #trend-table.tab-pane.center-block
       -if @keyword_tabledata
-        table.table
+        table.table.table-striped
           tbody
           tr
             th
