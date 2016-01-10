@@ -4,7 +4,7 @@
     h2 
       | Course List 
       i.fa.fa-th-list
-    table.table.table-striped
+    table.table.table-striped.table-hover
       tbody
         tr
           th Course ID
@@ -29,9 +29,10 @@
               a href="#{course['url']}"
                 i.fa.fa-external-link
 
-p.text-right
-  i.fa.fa-music
-  i.fa.fa-arrow-up.elevator-button.fa-4x
+- if @courselist.size >= 25
+  p.text-right
+    i.fa.fa-music
+    i.fa.fa-arrow-up.elevator-button.fa-4x
 
 javascript:
   window.onload = function() {
