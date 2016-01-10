@@ -55,7 +55,7 @@ class ApplicationController < Sinatra::Base
     video_stat = VedioStatisticsAPI.new(request_url).call
     @video_chartdata = video_stat.chart_data
 
-    logger.info @video_chartdata
+    # logger.info @video_chartdata
     slim :course_info
   end
 
@@ -98,7 +98,7 @@ class ApplicationController < Sinatra::Base
 
     institution_result = InstitutionsStatisticsResultAPI.new(request_url).call
     @institution_top10data = institution_result.top10_data
-    logger.info @institution_top10data
+    # logger.info @institution_top10data
 
     slim :statistics
   end
